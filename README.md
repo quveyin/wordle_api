@@ -21,3 +21,4 @@
    - **Sarı**: Harf var ama yanlış yerde
    - **Gri**: Harf kelimede yok
 4. 6 denemede kelimeyi bulmaya çalışın
+5. İyi oyunlar.
