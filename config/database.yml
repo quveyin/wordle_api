@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: wordle_api_development
+
+test:
+  <<: *default
+  database: wordle_api_test
+  
+production:
+  <<: *default
+  database: wordle_api_production
+  username: wordle_api
+  password: <%= ENV["WORDLE_API_DATABASE_PASSWORD"] %>

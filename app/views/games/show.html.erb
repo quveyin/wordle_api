@@ -1,0 +1,91 @@
+<% content_for :title, "Wordle" %>
+
+<div style="max-width: 600px; margin: 0 auto; padding: 30px; background: rgba(255,255,255,0.95); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); text-align: center;">
+  
+  <h1 style="margin-bottom: 30px; color: #2c3e50; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Wordle #<%= @game.id %></h1>
+  
+ 
+  <% if notice %>
+    <p style="color: #155724; background: rgba(212, 237, 218, 0.8); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745; font-weight: 500;"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p style="color: #721c24; background: rgba(248, 215, 218, 0.8); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #dc3545; font-weight: 500;"><%= alert %></p>
+  <% end %>
+
+    <% unless @game.completed? %>
+      <div style="color: #34495e; font-size: 18px; font-weight: 600; margin-bottom: 25px; padding: 15px; background: rgba(232, 244, 253, 0.6); border-radius: 10px;">
+        Deneme: <%= @game.guesses.count %>/6 | Kalan: <%= 6 - @game.guesses.count %>
+      </div>
+    <% end %>
+
+    <% unless @game.completed? %>
+      <div style="margin: 25px 0; padding: 20px; background: rgba(232, 244, 253, 0.4); border-radius: 12px;">
+        <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.3em;">Yeni Tahmin:</h3>
+        <%= form_with url: guess_game_path(@game), method: :post, local: true do |f| %>
+          <%= f.text_field :word, 
+              placeholder: "5 harfli kelime", 
+              maxlength: 5, 
+              required: true,
+              autofocus: true,
+              autocomplete: "off",
+              style: "padding: 15px; font-size: 18px; width: 220px; text-align: center; margin-right: 15px; border: 2px solid #bdc3c7; border-radius: 8px; background: white; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);" %>
+          <%= f.submit "Tahmin Yap", 
+              style: "padding: 15px 25px; font-size: 18px; background: linear-gradient(45deg, #3498db, #2980b9); color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);" %>
+        <% end %>
+      </div>
+    <% else %>
+      <div style="margin: 25px 0; padding: 20px; background: rgba(40, 167, 69, 0.1); border-radius: 12px;">
+        <%= form_with url: games_path, method: :post, local: true, style: "display: inline-block;" do |f| %>
+          <%= f.submit "🎮 Yeni Kelime ile Devam Et", 
+              style: "padding: 18px 35px; font-size: 20px; background: linear-gradient(45deg, #28a745, #20c997); color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);" %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <h3 style="color: #2c3e50; margin: 30px 0 20px 0; font-size: 1.4em;">Tahminleriniz</h3>
+    <% if @guesses.any? %>
+      <% @guesses.each do |guess| %>
+        <div style="display: flex; justify-content: center; margin: 15px 0;">
+          <% result = guess.feedback %>
+          <% guess.word.chars.each_with_index do |char, index| %>
+            <div style="
+              width: 55px;
+              height: 55px;
+              margin: 0 4px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 22px;
+              font-weight: bold;
+              border-radius: 8px;
+              background-color: <%= result[index] == 'correct' ? '#2ecc71' : result[index] == 'present' ? '#f39c12' : '#95a5a6' %>;
+              color: white;
+              box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+              transition: all 0.3s ease;
+            "><%= char.upcase %></div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <p style="color: #7f8c8d; font-style: italic; font-size: 16px; margin: 20px 0;">Henüz tahmin yapmadınız. İlk tahmininizi yapın!</p>
+    <% end %>
+  
+    <div style="margin-top: 30px; padding: 20px; background: rgba(248,249,250,0.6); border-radius: 12px; border-left: 4px solid #3498db;">
+      <p style="color: #2c3e50; font-weight: 600; margin-bottom: 15px; font-size: 16px;">Renk Anlamları:</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+        <div style="display: flex; align-items: center; margin: 5px 0;">
+          <span style="background: linear-gradient(45deg, #2ecc71, #27ae60); color: white; padding: 8px 12px; border-radius: 6px; margin-right: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);">Yeşil</span>
+          <span style="color: #2c3e50; font-size: 14px;">Doğru harf, doğru yerde</span>
+        </div>
+        <div style="display: flex; align-items: center; margin: 5px 0;">
+          <span style="background: linear-gradient(45deg, #f39c12, #e67e22); color: white; padding: 8px 12px; border-radius: 6px; margin-right: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);">Turuncu</span>
+          <span style="color: #2c3e50; font-size: 14px;">Doğru harf, yanlış yerde</span>
+        </div>
+        <div style="display: flex; align-items: center; margin: 5px 0;">
+          <span style="background: linear-gradient(45deg, #95a5a6, #7f8c8d); color: white; padding: 8px 12px; border-radius: 6px; margin-right: 8px; font-weight: 600; box-shadow: 0 2px 8px rgba(149, 165, 166, 0.3);">Gri</span>
+          <span style="color: #2c3e50; font-size: 14px;">Harf kelimede yok</span>
+        </div>
+      </div>
+    </div>
+    
+</div> 
