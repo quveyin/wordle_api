@@ -5,6 +5,12 @@
     
 
     
+    <% if flash[:alert] %>
+        <div class="error-message">
+            <%= flash[:alert] %>
+        </div>
+    <% end %>
+    
     <% unless @game.completed? %>
         <div class="game-info">
             Deneme: <%= @game.guesses.count %>/6
@@ -32,7 +38,7 @@
     
     <% unless @game.completed? %>
         <div class="input-form">
-            <%= form_with url: guess_game_path(@game), method: :post, local: true do |f| %>
+            <%= form_with url: game_token_guess_path(@game.token), method: :post, local: true do |f| %>
                 <%= f.text_field :word, 
                     maxlength: 5, 
                     placeholder: "5 harfli kelime",
@@ -51,12 +57,60 @@
             </div>
         <% else %>
             <div class="alert">
-                Deneme hakkınız tükendi.Doğru kelime: <strong><%= @game.secret_word.upcase %></strong>
+                Deneme hakkınız tükendi. Doğru kelime: <strong><%= @game.secret_word.upcase %></strong>
             </div>
         <% end %>
         
-        <%= form_with url: games_path, method: :post, local: true do |f| %>
-            <%= f.submit "Yeni Oyun" %>
-        <% end %>
+        <div class="next-period-message">
+            <% time_left = DailyWord.time_until_next_period %>
+            <% hours = (time_left / 3600).floor %>
+            <% minutes = ((time_left % 3600) / 60).floor %>
+            <p>Yeni kelimeyle oynamak için <strong><span id="countdown-main"><%= hours %> saat <%= minutes %> dakika</span></strong> bekleyin.</p>
+        </div>
     <% end %>
 </div>
+
+<% if @game.completed? %>
+<script>
+function updateCountdown() {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const nextPeriodHour = Math.floor(currentHour / 10) * 10 + 10;
+    
+    let nextPeriod;
+    if (nextPeriodHour >= 24) {
+        // Ertesi gün 00:00
+        nextPeriod = new Date(now);
+        nextPeriod.setDate(nextPeriod.getDate() + 1);
+        nextPeriod.setHours(0, 0, 0, 0);
+    } else {
+        // Aynı gün sonraki periyot
+        nextPeriod = new Date(now);
+        nextPeriod.setHours(nextPeriodHour, 0, 0, 0);
+    }
+    
+    const timeDiff = nextPeriod - now;
+    
+    if (timeDiff <= 0) {
+        // Süre doldu, sayfayı yenile
+        location.reload();
+        return;
+    }
+    
+    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    
+    const countdownText = `${hours} saat ${minutes} dakika ${seconds} saniye`;
+    
+    const countdownMainElement = document.getElementById('countdown-main');
+    
+    if (countdownMainElement) {
+        countdownMainElement.textContent = countdownText;
+    }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+<% end %>

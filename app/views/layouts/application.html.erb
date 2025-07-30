@@ -24,15 +24,56 @@
       }
       h1 {
         color: #2d3748;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-size: 32px;
         font-weight: 700;
         letter-spacing: -0.5px;
+      }
+      .daily-info {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 25px;
+        font-weight: 500;
+      }
+      .countdown-info {
+        background-color: #f0f8ff;
+        color: #2c5aa0;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        font-size: 14px;
+        border: 1px solid #b8d4f0;
+      }
+      .next-period-message {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .next-period-message p {
+        margin: 10px 0;
+        color: #4a5568;
+      }
+      .next-period-message small {
+        color: #718096;
+      }
+      #countdown, #countdown-main {
+        font-weight: bold;
+        color: #2c5aa0;
       }
       .game-info {
         margin-bottom: 25px;
         font-size: 16px;
         color: #4a5568;
+        font-weight: 500;
+        padding: 12px;
+        background: #f7fafc;
+        border-radius: 6px;
+        border: 1px solid #e2e8f0;
+      }
+      .game-info {
         font-weight: 500;
         padding: 12px;
         background: #f7fafc;
@@ -90,14 +131,14 @@
         border: 2px solid #e2e8f0;
         border-radius: 8px;
         margin-bottom: 20px;
-        text-transform: uppercase;
         font-weight: 600;
         letter-spacing: 2px;
         transition: border-color 0.2s ease;
       }
       input:focus {
         outline: none;
-        border-color: #a0aec0;
+        border-color: #4299e1;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
       }
       button {
         padding: 16px 32px;
@@ -109,10 +150,11 @@
         font-size: 16px;
         font-weight: 500;
         width: 100%;
-        transition: background-color 0.2s ease;
+        transition: all 0.2s ease;
       }
       button:hover {
         background-color: #4a5568;
+        transform: translateY(-1px);
       }
       .message {
         margin: 25px 0;
@@ -140,27 +182,50 @@
         border-radius: 6px;
         font-weight: 500;
       }
-      .instructions {
-        text-align: left;
+      .error-message {
+        background-color: #e53e3e;
+        color: white;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-weight: 500;
+        text-align: center;
+        border: 1px solid #c53030;
+      }
+      .game-grid {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 8px;
         margin-bottom: 30px;
-        padding: 20px;
-        background: #f7fafc;
-        border-radius: 12px;
-        border: 1px solid #e2e8f0;
-        font-size: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        min-height: 360px;
       }
-      .instructions p {
-        margin: 10px 0;
-        line-height: 1.6;
+      .empty-row {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
       }
-      .instructions strong {
-        color: #2d3748;
+      .empty-letter {
+        width: 50px;
+        height: 50px;
+        border: 2px dashed #cbd5e0;
+        border-radius: 6px;
+        background-color: #f7fafc;
+      }
+      @keyframes flip {
+        0% { transform: rotateY(0); }
+        50% { transform: rotateY(90deg); }
+        100% { transform: rotateY(0); }
+      }
+      .letter.animate {
+        animation: flip 0.6s ease-in-out;
       }
     </style>
 
   </head>
 
-  <body>
+  <body> 
     <%= yield %>
   </body>
 </html>
