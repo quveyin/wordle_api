@@ -61,6 +61,7 @@
             </div>
         <% end %>
         
+
         <div class="next-period-message">
             <% time_left = DailyWord.time_until_next_period %>
             <% hours = (time_left / 3600).floor %>
@@ -70,8 +71,12 @@
     <% end %>
 </div>
 
+
+
 <% if @game.completed? %>
 <script>
+
+
 function updateCountdown() {
     const now = new Date();
     const currentHour = now.getHours();
@@ -79,12 +84,10 @@ function updateCountdown() {
     
     let nextPeriod;
     if (nextPeriodHour >= 24) {
-        // Ertesi gün 00:00
         nextPeriod = new Date(now);
         nextPeriod.setDate(nextPeriod.getDate() + 1);
         nextPeriod.setHours(0, 0, 0, 0);
     } else {
-        // Aynı gün sonraki periyot
         nextPeriod = new Date(now);
         nextPeriod.setHours(nextPeriodHour, 0, 0, 0);
     }
@@ -92,7 +95,6 @@ function updateCountdown() {
     const timeDiff = nextPeriod - now;
     
     if (timeDiff <= 0) {
-        // Süre doldu, sayfayı yenile
         location.reload();
         return;
     }
@@ -107,6 +109,12 @@ function updateCountdown() {
     
     if (countdownMainElement) {
         countdownMainElement.textContent = countdownText;
+    }
+    
+    const modalCountdownElement = document.getElementById('modal-countdown');
+    if (modalCountdownElement) {
+        const modalText = `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        modalCountdownElement.textContent = modalText;
     }
 }
 

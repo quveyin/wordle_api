@@ -5108,6 +5108,7 @@ yasak
 yasal
 yasin
 yaslı
+yaşlı
 yasma
 yassı
 yaşam

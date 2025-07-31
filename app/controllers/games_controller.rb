@@ -114,4 +114,6 @@ class GamesController < ApplicationController
   def valid_word?(word)
     load_valid_words.include?(word.downcase.strip)
   end
+  
+
 end
