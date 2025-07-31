@@ -1,17 +1,4 @@
 # Ruby Wordle Oyunu
-
-## Özellikler
-
-- **Basit Wordle Oyunu**: 5 harfli Türkçe kelimelerle
-- **Responsive**: Mobil ve masaüstü uyumlu
-
-## Kurulum
-
-### Gereksinimler
-- Ruby 3.2.2
-- PostgreSQL
-- Rails 7.1.5+
-
 ## Oyun Nasıl Oynanır
 
 1. Ana sayfada "Yeni Oyun" butonuna tıklayın
