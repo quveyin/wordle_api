@@ -5,8 +5,8 @@ class Guess < ApplicationRecord
   
   def check_against_secret(secret_word)
     result = []
-    word_chars = word.downcase.chars
-    secret_chars = secret_word.downcase.chars
+    word_chars = normalize_turkish_chars(word.downcase).chars
+    secret_chars = normalize_turkish_chars(secret_word.downcase).chars
     
     word_chars.each_with_index do |char, index|
       if secret_chars[index] == char
@@ -23,5 +23,11 @@ class Guess < ApplicationRecord
   
   def feedback
     check_against_secret(game.secret_word)
+  end
+  
+  private
+  
+  def normalize_turkish_chars(text)
+    text.tr('ıİ', 'ii').downcase
   end
 end

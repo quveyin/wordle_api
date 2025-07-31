@@ -27585,3 +27585,1951 @@ Processing by GamesController#show as HTML
 Completed 200 OK in 74ms (Views: 34.9ms | ActiveRecord: 16.7ms | Allocations: 9923)
 
 
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:34:16 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 170.7ms | Allocations: 631)
+  Rendered layout layouts/application.html.erb (Duration: 184.6ms | Allocations: 1175)
+Completed 200 OK in 1325ms (Views: 227.9ms | ActiveRecord: 168.4ms | Allocations: 9447)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-31 17:34:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:34:26 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mGame Load (34.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" IN ($1, $2, $3, $4, $5, $6, $7, $8) AND "games"."game_period" = $9 ORDER BY "games"."id" ASC LIMIT $10[0m  [["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["game_period", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:92:in `current_session_current_period_game'
+Redirected to http://localhost:3000/game/n62e6PcHnDg
+Completed 302 Found in 122ms (ActiveRecord: 34.7ms | Allocations: 1906)
+
+
+Started GET "/game/n62e6PcHnDg" for 127.0.0.1 at 2025-07-31 17:34:26 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 157], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (1.0ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 157]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 157]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 39.9ms | Allocations: 7351)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 7503)
+Completed 200 OK in 68ms (Views: 38.0ms | ActiveRecord: 10.8ms | Allocations: 9775)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:34:45 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 380)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 607)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-31 17:34:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:34:48 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mDailyWord Load (8.8ms)[0m  [1m[34mSELECT "daily_words".* FROM "daily_words" WHERE "daily_words"."date" = $1 LIMIT $2[0m  [["date", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/models/daily_word.rb:7:in `current_word'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Exists? (8.0ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Create (8.6ms)[0m  [1m[32mINSERT INTO "games" ("secret_word", "attempts_count", "created_at", "updated_at", "user_id", "token", "game_period") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["secret_word", "[FILTERED]"], ["attempts_count", 0], ["created_at", "2025-07-31 14:34:48.884311"], ["updated_at", "2025-07-31 14:34:48.884311"], ["user_id", nil], ["token", "[FILTERED]"], ["game_period", "2025-07-31"]]
+  ↳ app/controllers/games_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:19:in `create'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 215ms (ActiveRecord: 118.3ms | Allocations: 5924)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:34:48 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 26.5ms | Allocations: 3203)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 3353)
+Completed 200 OK in 38ms (Views: 26.3ms | ActiveRecord: 3.4ms | Allocations: 4357)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:34:51 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"selam", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (6.5ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "selam"], ["game_id", 181], ["created_at", "2025-07-31 14:34:51.565018"], ["updated_at", "2025-07-31 14:34:51.565018"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/controllers/games_controller.rb:68:in `guess'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 116ms (ActiveRecord: 10.7ms | Allocations: 15348)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:34:51 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 21.8ms | Allocations: 3765)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 3915)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 1.5ms | Allocations: 4927)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:34:53 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"araba", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (4.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (4.3ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "araba"], ["game_id", 181], ["created_at", "2025-07-31 14:34:53.744763"], ["updated_at", "2025-07-31 14:34:53.744763"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/controllers/games_controller.rb:68:in `guess'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 38ms (ActiveRecord: 14.2ms | Allocations: 4402)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:34:53 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.9ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 25.9ms | Allocations: 3876)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 4026)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 2.5ms | Allocations: 5038)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:00 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"balık", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (2.0ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "balık"], ["game_id", 181], ["created_at", "2025-07-31 14:35:00.052354"], ["updated_at", "2025-07-31 14:35:00.052354"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/controllers/games_controller.rb:64:in `guess'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 37ms (ActiveRecord: 9.3ms | Allocations: 4430)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:00 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 72.7ms | Allocations: 3987)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | Allocations: 4137)
+Completed 200 OK in 86ms (Views: 76.0ms | ActiveRecord: 4.6ms | Allocations: 5143)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:06 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (5.7ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 181], ["created_at", "2025-07-31 14:35:06.335550"], ["updated_at", "2025-07-31 14:35:06.335550"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 46ms (ActiveRecord: 13.8ms | Allocations: 4456)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:06 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (8.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (1.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 46.3ms | Allocations: 4099)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 4249)
+Completed 200 OK in 54ms (Views: 37.7ms | ActiveRecord: 14.3ms | Allocations: 5272)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:10 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 16ms (ActiveRecord: 1.8ms | Allocations: 1948)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:10 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 15.2ms | Allocations: 4101)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4251)
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 3.1ms | Allocations: 5265)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:28 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"YASLI", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (4.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.8ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 13ms (ActiveRecord: 5.3ms | Allocations: 1932)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:28 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 35.4ms | Allocations: 4101)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 4251)
+Completed 200 OK in 47ms (Views: 36.5ms | ActiveRecord: 2.4ms | Allocations: 5265)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:31 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"YASLİ", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 23ms (ActiveRecord: 2.4ms | Allocations: 1953)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:31 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (1.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 17.8ms | Allocations: 4101)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 4251)
+Completed 200 OK in 23ms (Views: 14.6ms | ActiveRecord: 5.4ms | Allocations: 5255)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:36 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"YASLİ", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (3.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 11ms (ActiveRecord: 4.3ms | Allocations: 1943)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:36 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (1.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 45.5ms | Allocations: 4104)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 4254)
+Completed 200 OK in 53ms (Views: 46.9ms | ActiveRecord: 3.8ms | Allocations: 5261)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:35:39 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"YASLI", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (2.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms | Allocations: 1938)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:35:39 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 4102)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4252)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 2.9ms | Allocations: 5250)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:36:13 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (1.8ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 181], ["created_at", "2025-07-31 14:36:13.299395"], ["updated_at", "2025-07-31 14:36:13.299395"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 31ms (ActiveRecord: 6.8ms | Allocations: 4481)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:36:13 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.8ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (2.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 26.3ms | Allocations: 4209)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 4359)
+Completed 200 OK in 44ms (Views: 25.4ms | ActiveRecord: 4.7ms | Allocations: 5375)
+
+
+Started POST "/game/YS6ocpATq8Y/guess" for 127.0.0.1 at 2025-07-31 17:36:18 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (2.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.0ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (9.6ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 181], ["created_at", "2025-07-31 14:36:18.711832"], ["updated_at", "2025-07-31 14:36:18.711832"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:22:in `lost?'
+Redirected to http://localhost:3000/game/YS6ocpATq8Y
+Completed 302 Found in 56ms (ActiveRecord: 24.0ms | Allocations: 4116)
+
+
+Started GET "/game/YS6ocpATq8Y" for 127.0.0.1 at 2025-07-31 17:36:18 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 181], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 181]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 181]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 28.4ms | Allocations: 3695)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 3848)
+Completed 200 OK in 41ms (Views: 29.3ms | ActiveRecord: 2.0ms | Allocations: 4855)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:36:24 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 415)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 565)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 793)
+
+
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:36:26 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) AND "games"."game_period" = $19 ORDER BY "games"."id" ASC LIMIT $20[0m  [["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["game_period", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:92:in `current_session_current_period_game'
+Redirected to http://localhost:3000/game/XP4B-ZNfS68
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms | Allocations: 1267)
+
+
+Started GET "/game/XP4B-ZNfS68" for 127.0.0.1 at 2025-07-31 17:36:26 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 156], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 156]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 32.5ms | Allocations: 3870)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 4022)
+Completed 200 OK in 44ms (Views: 35.0ms | ActiveRecord: 5.5ms | Allocations: 5089)
+
+
+Started GET "/game/XP4B-ZNfS68" for 127.0.0.1 at 2025-07-31 17:36:44 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 624)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:36:44 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 379)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 606)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-31 17:36:44 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:36:46 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mDailyWord Load (1.9ms)[0m  [1m[34mSELECT "daily_words".* FROM "daily_words" WHERE "daily_words"."date" = $1 LIMIT $2[0m  [["date", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/models/daily_word.rb:7:in `current_word'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Create (1.4ms)[0m  [1m[32mINSERT INTO "games" ("secret_word", "attempts_count", "created_at", "updated_at", "user_id", "token", "game_period") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["secret_word", "[FILTERED]"], ["attempts_count", 0], ["created_at", "2025-07-31 14:36:46.279877"], ["updated_at", "2025-07-31 14:36:46.279877"], ["user_id", nil], ["token", "[FILTERED]"], ["game_period", "2025-07-31"]]
+  ↳ app/controllers/games_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:19:in `create'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 23ms (ActiveRecord: 11.0ms | Allocations: 2712)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:36:46 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 32.6ms | Allocations: 3191)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 3341)
+Completed 200 OK in 53ms (Views: 38.5ms | ActiveRecord: 3.2ms | Allocations: 4338)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:36:49 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"selam", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (2.6ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "selam"], ["game_id", 182], ["created_at", "2025-07-31 14:36:49.028833"], ["updated_at", "2025-07-31 14:36:49.028833"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/controllers/games_controller.rb:68:in `guess'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 19ms (ActiveRecord: 5.5ms | Allocations: 4382)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:36:49 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3765)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3915)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.9ms | Allocations: 4927)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:36:51 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (2.4ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 182], ["created_at", "2025-07-31 14:36:51.654541"], ["updated_at", "2025-07-31 14:36:51.654541"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 30ms (ActiveRecord: 8.8ms | Allocations: 4383)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:36:51 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (9.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (6.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 33.4ms | Allocations: 3877)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 4027)
+Completed 200 OK in 57ms (Views: 15.5ms | ActiveRecord: 21.1ms | Allocations: 5057)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:36:54 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 1894)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:36:54 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 22.1ms | Allocations: 3880)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 4030)
+Completed 200 OK in 27ms (Views: 21.9ms | ActiveRecord: 1.6ms | Allocations: 5082)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:37:01 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"kadın", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (5.0ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "kadın"], ["game_id", 182], ["created_at", "2025-07-31 14:37:01.171708"], ["updated_at", "2025-07-31 14:37:01.171708"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 29ms (ActiveRecord: 10.5ms | Allocations: 4428)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:37:01 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 36.5ms | Allocations: 3989)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 4139)
+Completed 200 OK in 44ms (Views: 35.5ms | ActiveRecord: 2.9ms | Allocations: 5159)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:37:03 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"kadim", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (4.2ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "kadim"], ["game_id", 182], ["created_at", "2025-07-31 14:37:03.943424"], ["updated_at", "2025-07-31 14:37:03.943424"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/controllers/games_controller.rb:64:in `guess'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 25ms (ActiveRecord: 8.6ms | Allocations: 4435)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:37:03 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 31.5ms | Allocations: 4097)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 4247)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 2.5ms | Allocations: 5258)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:37:35 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 4097)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 4247)
+Completed 200 OK in 30ms (Views: 18.8ms | ActiveRecord: 2.6ms | Allocations: 5262)
+
+
+Started POST "/game/oPizYPJ6RMc/guess" for 127.0.0.1 at 2025-07-31 17:37:39 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/oPizYPJ6RMc
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms | Allocations: 1941)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:37:39 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 182], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 182]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 182]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 4101)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 4251)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 1.4ms | Allocations: 5301)
+
+
+Started GET "/game/oPizYPJ6RMc" for 127.0.0.1 at 2025-07-31 17:37:51 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 622)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:37:51 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 379)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 606)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-31 17:37:51 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:37:52 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mDailyWord Load (0.5ms)[0m  [1m[34mSELECT "daily_words".* FROM "daily_words" WHERE "daily_words"."date" = $1 LIMIT $2[0m  [["date", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/models/daily_word.rb:7:in `current_word'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("secret_word", "attempts_count", "created_at", "updated_at", "user_id", "token", "game_period") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["secret_word", "[FILTERED]"], ["attempts_count", 0], ["created_at", "2025-07-31 14:37:52.900058"], ["updated_at", "2025-07-31 14:37:52.900058"], ["user_id", nil], ["token", "[FILTERED]"], ["game_period", "2025-07-31"]]
+  ↳ app/controllers/games_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:19:in `create'
+Redirected to http://localhost:3000/game/DSe9Hl636pA
+Completed 302 Found in 27ms (ActiveRecord: 14.7ms | Allocations: 2706)
+
+
+Started GET "/game/DSe9Hl636pA" for 127.0.0.1 at 2025-07-31 17:37:52 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (5.0ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 183], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 35.1ms | Allocations: 3194)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 3344)
+Completed 200 OK in 42ms (Views: 28.4ms | ActiveRecord: 9.0ms | Allocations: 4350)
+
+
+Started POST "/game/DSe9Hl636pA/guess" for 127.0.0.1 at 2025-07-31 17:37:55 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/DSe9Hl636pA
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms | Allocations: 1849)
+
+
+Started GET "/game/DSe9Hl636pA" for 127.0.0.1 at 2025-07-31 17:37:55 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 183], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3194)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 3344)
+Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 2.1ms | Allocations: 4374)
+
+
+Started POST "/game/DSe9Hl636pA/guess" for 127.0.0.1 at 2025-07-31 17:37:57 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.8ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (6.2ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 183], ["created_at", "2025-07-31 14:37:57.146779"], ["updated_at", "2025-07-31 14:37:57.146779"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (11.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/DSe9Hl636pA
+Completed 302 Found in 50ms (ActiveRecord: 24.9ms | Allocations: 4381)
+
+
+Started GET "/game/DSe9Hl636pA" for 127.0.0.1 at 2025-07-31 17:37:57 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 183], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 3768)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3918)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 1.9ms | Allocations: 4934)
+
+
+Started POST "/game/DSe9Hl636pA/guess" for 127.0.0.1 at 2025-07-31 17:38:00 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"insan", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (1.6ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "insan"], ["game_id", 183], ["created_at", "2025-07-31 14:38:00.958776"], ["updated_at", "2025-07-31 14:38:00.958776"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/controllers/games_controller.rb:64:in `guess'
+Redirected to http://localhost:3000/game/DSe9Hl636pA
+Completed 302 Found in 26ms (ActiveRecord: 5.2ms | Allocations: 4411)
+
+
+Started GET "/game/DSe9Hl636pA" for 127.0.0.1 at 2025-07-31 17:38:00 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 183], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3876)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4026)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 1.4ms | Allocations: 5030)
+
+
+Started POST "/game/DSe9Hl636pA/guess" for 127.0.0.1 at 2025-07-31 17:38:07 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (2.5ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 183], ["created_at", "2025-07-31 14:38:07.088432"], ["updated_at", "2025-07-31 14:38:07.088432"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/DSe9Hl636pA
+Completed 302 Found in 28ms (ActiveRecord: 8.6ms | Allocations: 4436)
+
+
+Started GET "/game/DSe9Hl636pA" for 127.0.0.1 at 2025-07-31 17:38:07 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 183], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 183]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 183]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3988)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4138)
+Completed 200 OK in 21ms (Views: 11.3ms | ActiveRecord: 3.7ms | Allocations: 5157)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:38:18 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 592)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:38:20 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mGame Load (5.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" IN ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) AND "games"."game_period" = $19 ORDER BY "games"."id" ASC LIMIT $20[0m  [["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["token", "[FILTERED]"], ["game_period", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:92:in `current_session_current_period_game'
+Redirected to http://localhost:3000/game/XP4B-ZNfS68
+Completed 302 Found in 10ms (ActiveRecord: 4.9ms | Allocations: 1264)
+
+
+Started GET "/game/XP4B-ZNfS68" for 127.0.0.1 at 2025-07-31 17:38:20 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 156], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 156]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 156]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3870)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 4022)
+Completed 200 OK in 25ms (Views: 15.1ms | ActiveRecord: 1.9ms | Allocations: 5129)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:38:43 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 229)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 379)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 606)
+
+
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:38:44 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mDailyWord Load (0.4ms)[0m  [1m[34mSELECT "daily_words".* FROM "daily_words" WHERE "daily_words"."date" = $1 LIMIT $2[0m  [["date", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/models/daily_word.rb:7:in `current_word'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Create (2.8ms)[0m  [1m[32mINSERT INTO "games" ("secret_word", "attempts_count", "created_at", "updated_at", "user_id", "token", "game_period") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["secret_word", "[FILTERED]"], ["attempts_count", 0], ["created_at", "2025-07-31 14:38:44.810671"], ["updated_at", "2025-07-31 14:38:44.810671"], ["user_id", nil], ["token", "[FILTERED]"], ["game_period", "2025-07-31"]]
+  ↳ app/controllers/games_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:19:in `create'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 23ms (ActiveRecord: 8.2ms | Allocations: 2715)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:38:44 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3190)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3340)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 2.7ms | Allocations: 4349)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:38:49 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (2.9ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 184], ["created_at", "2025-07-31 14:38:49.596373"], ["updated_at", "2025-07-31 14:38:49.596373"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 24ms (ActiveRecord: 8.2ms | Allocations: 4390)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:38:49 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (9.0ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 37.5ms | Allocations: 3768)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 3918)
+Completed 200 OK in 57ms (Views: 32.3ms | ActiveRecord: 10.9ms | Allocations: 4949)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:38:53 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (1.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 13ms (ActiveRecord: 4.4ms | Allocations: 1854)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:38:53 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (3.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.8ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 28.3ms | Allocations: 3771)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 3921)
+Completed 200 OK in 40ms (Views: 21.6ms | ActiveRecord: 8.5ms | Allocations: 4944)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:39:01 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaşlı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (1.1ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaşlı"], ["game_id", 184], ["created_at", "2025-07-31 14:39:01.238103"], ["updated_at", "2025-07-31 14:39:01.238103"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/controllers/games_controller.rb:66:in `guess'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 18ms (ActiveRecord: 5.7ms | Allocations: 4401)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:39:01 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (5.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 22.5ms | Allocations: 3880)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 4030)
+Completed 200 OK in 29ms (Views: 17.9ms | ActiveRecord: 7.4ms | Allocations: 5029)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:39:06 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaşli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms | Allocations: 1887)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:39:06 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 3882)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 4032)
+Completed 200 OK in 35ms (Views: 17.9ms | ActiveRecord: 3.5ms | Allocations: 5051)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:40:20 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 389.6ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 414.3ms | Allocations: 519)
+Completed 200 OK in 557ms (Views: 494.5ms | ActiveRecord: 0.0ms | Allocations: 748)
+
+
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:40:23 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mGame Load (8.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 AND "games"."game_period" = $2 ORDER BY "games"."id" ASC LIMIT $3[0m  [["token", "[FILTERED]"], ["game_period", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:92:in `current_session_current_period_game'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 371ms (ActiveRecord: 4.0ms | Allocations: 1004)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:40:23 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 106.0ms | Allocations: 3878)
+  Rendered layout layouts/application.html.erb (Duration: 108.5ms | Allocations: 4028)
+Completed 200 OK in 196ms (Views: 108.7ms | ActiveRecord: 2.4ms | Allocations: 5029)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:40:31 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasla", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (2.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 61ms (ActiveRecord: 5.3ms | Allocations: 1882)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:40:31 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 34.9ms | Allocations: 3882)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 4032)
+Completed 200 OK in 59ms (Views: 40.1ms | ActiveRecord: 1.2ms | Allocations: 5036)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:40:41 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslü", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.9ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 33ms (ActiveRecord: 1.9ms | Allocations: 1887)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:40:41 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.7ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 79.3ms | Allocations: 3885)
+  Rendered layout layouts/application.html.erb (Duration: 81.1ms | Allocations: 4035)
+Completed 200 OK in 95ms (Views: 78.7ms | ActiveRecord: 3.7ms | Allocations: 5057)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:40:47 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"insan", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (7.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.4ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (26.5ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "insan"], ["game_id", 184], ["created_at", "2025-07-31 14:40:48.036390"], ["updated_at", "2025-07-31 14:40:48.036390"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:22:in `lost?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/controllers/games_controller.rb:64:in `guess'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 331ms (ActiveRecord: 38.8ms | Allocations: 4422)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:40:48 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 76.2ms | Allocations: 3989)
+  Rendered layout layouts/application.html.erb (Duration: 80.3ms | Allocations: 4139)
+Completed 200 OK in 106ms (Views: 81.4ms | ActiveRecord: 3.4ms | Allocations: 5182)
+
+
+Started POST "/game/hjM_Unkk2pc/guess" for 127.0.0.1 at 2025-07-31 17:40:55 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yasli", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 196ms (ActiveRecord: 88.5ms | Allocations: 10982)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:40:57 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.1ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 43.0ms | Allocations: 5224)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 5777)
+Completed 200 OK in 64ms (Views: 52.8ms | ActiveRecord: 1.2ms | Allocations: 7385)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:41:26 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 594)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1136)
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 2.7ms | Allocations: 6888)
+
+
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:41:28 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 AND "games"."game_period" = $2 ORDER BY "games"."id" ASC LIMIT $3[0m  [["token", "[FILTERED]"], ["game_period", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:92:in `current_session_current_period_game'
+Redirected to http://localhost:3000/game/hjM_Unkk2pc
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms | Allocations: 1717)
+
+
+Started GET "/game/hjM_Unkk2pc" for 127.0.0.1 at 2025-07-31 17:41:28 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (2.3ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 184], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.2ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 184]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 88.3ms | Allocations: 7256)
+  Rendered layout layouts/application.html.erb (Duration: 88.9ms | Allocations: 7408)
+Completed 200 OK in 152ms (Views: 93.1ms | ActiveRecord: 9.4ms | Allocations: 9962)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-31 17:41:45 +0300
+Processing by GamesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 380)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 607)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-07-31 17:41:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/games" for 127.0.0.1 at 2025-07-31 17:41:48 +0300
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Oyun Başlat"}
+  [1m[36mDailyWord Load (1.4ms)[0m  [1m[34mSELECT "daily_words".* FROM "daily_words" WHERE "daily_words"."date" = $1 LIMIT $2[0m  [["date", "2025-07-31"], ["LIMIT", 1]]
+  ↳ app/models/daily_word.rb:7:in `current_word'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/game.rb:38:in `block in generate_token'
+  [1m[36mGame Create (1.6ms)[0m  [1m[32mINSERT INTO "games" ("secret_word", "attempts_count", "created_at", "updated_at", "user_id", "token", "game_period") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["secret_word", "[FILTERED]"], ["attempts_count", 0], ["created_at", "2025-07-31 14:41:48.071690"], ["updated_at", "2025-07-31 14:41:48.071690"], ["user_id", nil], ["token", "[FILTERED]"], ["game_period", "2025-07-31"]]
+  ↳ app/controllers/games_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:19:in `create'
+Redirected to http://localhost:3000/game/vMD5davtIAQ
+Completed 302 Found in 50ms (ActiveRecord: 12.3ms | Allocations: 5884)
+
+
+Started GET "/game/vMD5davtIAQ" for 127.0.0.1 at 2025-07-31 17:41:48 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.5ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/views/games/show.html.erb:16
+  [1m[36mGuess Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 185], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 33.2ms | Allocations: 3203)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 3353)
+Completed 200 OK in 49ms (Views: 37.5ms | ActiveRecord: 3.7ms | Allocations: 4354)
+
+
+Started POST "/game/vMD5davtIAQ/guess" for 127.0.0.1 at 2025-07-31 17:41:51 +0300
+Processing by GamesController#guess as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "word"=>"yaslı", "commit"=>"Tahmin Et", "token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  [1m[36mGuess Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Create (5.3ms)[0m  [1m[32mINSERT INTO "guesses" ("word", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "yaslı"], ["game_id", 185], ["created_at", "2025-07-31 14:41:51.975968"], ["updated_at", "2025-07-31 14:41:51.975968"]]
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:53:in `guess'
+  [1m[36mGuess Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/controllers/games_controller.rb:55:in `guess'
+Redirected to http://localhost:3000/game/vMD5davtIAQ
+Completed 302 Found in 121ms (ActiveRecord: 15.6ms | Allocations: 41907)
+
+
+Started GET "/game/vMD5davtIAQ" for 127.0.0.1 at 2025-07-31 17:41:52 +0300
+Processing by GamesController#show as HTML
+  Parameters: {"token"=>"[FILTERED]"}
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."token" = $1 LIMIT $2[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/games_controller.rb:83:in `set_game'
+  Rendering layout layouts/application.html.erb
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mGuess Count (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:18:in `won?'
+  [1m[36mGuess Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "guesses" WHERE "guesses"."game_id" = $1 LIMIT $2[0m  [["game_id", 185], ["LIMIT", 1]]
+  ↳ app/views/games/show.html.erb:21
+  [1m[36mGuess Load (0.6ms)[0m  [1m[34mSELECT "guesses".* FROM "guesses" WHERE "guesses"."game_id" = $1 ORDER BY "guesses"."created_at" ASC[0m  [["game_id", 185]]
+  ↳ app/views/games/show.html.erb:22
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/views/games/show.html.erb:56
+  [1m[36mCACHE Guess Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "guesses" WHERE "guesses"."game_id" = $1[0m  [["game_id", 185]]
+  ↳ app/models/game.rb:14:in `completed?'
+  Rendered games/show.html.erb within layouts/application (Duration: 31.2ms | Allocations: 3715)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 3868)
+Completed 200 OK in 43ms (Views: 28.5ms | ActiveRecord: 7.7ms | Allocations: 4907)
+
+

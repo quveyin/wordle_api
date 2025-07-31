@@ -15,7 +15,7 @@ class Game < ApplicationRecord
   end
   
   def won?
-    guesses.any? { |guess| guess.word.downcase == secret_word.downcase }
+    guesses.any? { |guess| normalize_turkish_chars(guess.word.downcase) == normalize_turkish_chars(secret_word.downcase) }
   end
   
   def lost?
@@ -45,5 +45,9 @@ class Game < ApplicationRecord
   
   def self.current_word
     DailyWord.current_word
+  end
+  
+  def normalize_turkish_chars(text)
+    text.tr('ıİ', 'ii').downcase
   end
 end

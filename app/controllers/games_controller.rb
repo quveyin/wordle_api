@@ -112,8 +112,11 @@ class GamesController < ApplicationController
   end
   
   def valid_word?(word)
-    load_valid_words.include?(word.downcase.strip)
+    normalized_word = normalize_turkish_chars(word.downcase.strip)
+    load_valid_words.any? { |valid_word| normalize_turkish_chars(valid_word) == normalized_word }
   end
   
-
+  def normalize_turkish_chars(text)
+    text.tr('ıİ', 'ii').downcase
+  end
 end

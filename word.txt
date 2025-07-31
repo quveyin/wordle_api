@@ -5108,6 +5108,7 @@ yasak
 yasal
 yasin
 yaslı
+yasli
 yaşlı
 yasma
 yassı
