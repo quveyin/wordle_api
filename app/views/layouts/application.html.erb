@@ -221,6 +221,132 @@
       .letter.animate {
         animation: flip 0.6s ease-in-out;
       }
+      
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      
+      .modal-content {
+        background-color: #ffffff;
+        color: #1a202c;
+        padding: 25px;
+        border-radius: 12px;
+        width: 350px;
+        max-width: 90%;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        border: 1px solid #e2e8f0;
+      }
+      
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #718096;
+        transition: color 0.2s;
+      }
+      .close:hover {
+        color: #2d3748;
+      }
+      
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0;
+        gap: 10px;
+      }
+      
+      .stat-item {
+        text-align: center;
+        flex: 1;
+      }
+      
+      .stat-value {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2b6cb0;
+        margin-bottom: 5px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+        color: #718096;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .distribution {
+        margin-top: 20px;
+      }
+      
+      .dist-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      
+      .dist-number {
+        width: 25px;
+        margin-right: 12px;
+        font-weight: bold;
+        color: #4a5568;
+      }
+      
+      .dist-bar {
+        background-color: #e2e8f0;
+        padding: 6px 12px;
+        border-radius: 4px;
+        min-width: 35px;
+        text-align: center;
+        font-weight: bold;
+        color: #2d3748;
+        border: 1px solid #cbd5e0;
+        transition: background-color 0.2s;
+      }
+      
+      .modal h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #2d3748;
+      }
+      
+      .modal h3 {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        color: #4a5568;
+        font-size: 16px;
+      }
+      
+      @media (max-width: 480px) {
+        .modal-content {
+          width: 95%;
+          padding: 20px;
+        }
+        .stats-container {
+          gap: 5px;
+        }
+        .stat-value {
+          font-size: 24px;
+        }
+        .stats-btn {
+          top: 10px;
+          right: 10px;
+          padding: 6px 10px;
+          font-size: 12px;
+        }
+      }
     </style>
 
   </head>

@@ -71,7 +71,42 @@
     <% end %>
 </div>
 
-
+<div id="stats-modal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <h2>İstatistikler</h2>
+    
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-value" id="games-played">0</div>
+        <div class="stat-label">Oynanan</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="win-percentage">0%</div>
+        <div class="stat-label">Kazanma %</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="current-streak">0</div>
+        <div class="stat-label">Mevcut Seri</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" id="max-streak">0</div>
+        <div class="stat-label">En Uzun Seri</div>
+      </div>
+    </div>
+    
+    <h3>Tahmin Dağılımı</h3>
+    <div class="distribution">
+      <% (1..6).each do |i| %>
+        <div class="dist-item">
+          <div class="dist-number"><%= i %></div>
+          <div class="dist-bar" id="guess-distribution-<%= i %>">0</div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <% if @game.completed? %>
 <script>
@@ -120,5 +155,54 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+</script>
+<% end %>
+
+<% if @game.completed? %>
+<script>
+async function showStatsOnGameEnd() {
+  try {
+    const response = await fetch('/stats');
+    const stats = await response.json();
+    
+    document.getElementById('games-played').textContent = stats.games_played;
+    document.getElementById('win-percentage').textContent = 
+      stats.games_played ? Math.round((stats.games_won / stats.games_played) * 100) + '%' : '0%';
+    document.getElementById('current-streak').textContent = stats.current_streak;
+    document.getElementById('max-streak').textContent = stats.max_streak;
+    
+    for (let i = 1; i <= 6; i++) {
+      const bar = document.getElementById(`guess-distribution-${i}`);
+      if (bar) {
+        bar.textContent = stats.guess_distribution[i] || 0;
+      }
+    }
+    
+    setTimeout(() => {
+      document.getElementById('stats-modal').style.display = 'flex';
+    }, 2000);
+  } catch (error) {
+    console.error('İstatistikler alınamadı:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showStatsOnGameEnd();
+  const closeBtn = document.querySelector('.close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      document.getElementById('stats-modal').style.display = 'none';
+    });
+  }
+  
+  const modal = document.getElementById('stats-modal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
+});
 </script>
 <% end %>

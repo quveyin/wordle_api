@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   get '/game/:token', to: 'games#show', as: 'game_token'
   post '/game/:token/guess', to: 'games#guess', as: 'game_token_guess'
   
+  # Statistics API
+  get '/stats', to: 'games#stats'
+  
   root 'games#new'
 end
